@@ -7,7 +7,7 @@
 
 ## 📋 Sobre o Projeto
 
-A **Super Store**, uma líder do setor de varejo, enfrentava o desafio de gerenciar grandes volumes de dados dispersos e desestruturados[cite: 19]. O objetivo deste projeto foi implementar um pipeline **ETL (Extract, Transform, Load)** robusto para estruturar esses dados em um **Data Warehouse** no Google BigQuery, permitindo análises estratégicas de padrões de consumo e performance de vendas.
+A **Super Store**, uma líder do setor de varejo, enfrentava o desafio de gerenciar grandes volumes de dados dispersos e desestruturados. O objetivo deste projeto foi implementar um pipeline **ETL (Extract, Transform, Load)** robusto para estruturar esses dados em um **Data Warehouse** no Google BigQuery, permitindo análises estratégicas de padrões de consumo e performance de vendas.
 
 O projeto culminou em um Dashboard interativo para suporte à tomada de decisão.
 
@@ -37,9 +37,9 @@ A ingestão de dados combinou fontes internas e enriquecimento com dados externo
 
 ### 2. Transformação (Transformation)
 Nesta etapa, os dados brutos foram higienizados e preparados utilizando Python:
-***Limpeza de Dados:** Tratamento de valores nulos e remoção de duplicatas[cite: 81, 83].
+***Limpeza de Dados:** Tratamento de valores nulos e remoção de duplicatas.
 ***Detecção de Outliers:** Aplicação do método estatístico **IQR (Interquartile Range)** para identificar anomalias em variáveis numéricas como `profit` (lucro) e `shipping_cost` (custo de envio).
-***Padronização:** Normalização de strings (ex: capitalização de nomes) e conversão de tipos de dados (`datetime`)[cite: 102, 487].
+***Padronização:** Normalização de strings (ex: capitalização de nomes) e conversão de tipos de dados (`datetime`).
 ***Engenharia de Atributos:** Criação da dimensão `Dim_Tempo` com derivação de Ano, Trimestre, Mês e Dia da Semana.
 
 ### 3. Modelagem de Dados (Star Schema)
@@ -47,7 +47,7 @@ Os dados foram estruturados em tabelas Fato e Dimensão:
 
 | Tabela | Tipo | Descrição |
 | :--- | :--- | :--- |
-| **Fato_Vendas** | Fato |Tabela central contendo métricas (Vendas, Lucro, Quantidade) e chaves estrangeiras[cite: 412]. |
+| **Fato_Vendas** | Fato |Tabela central contendo métricas (Vendas, Lucro, Quantidade) e chaves estrangeiras. |
 | **Dim_Cliente** | Dimensão | Dados cadastrais. Implementação de **SCD Tipo 2 (Slowly Changing Dimension)** para rastrear histórico de mudanças no segmento do cliente. |
 | **Dim_Produto** | Dimensão | Detalhes de produtos, categorias e subcategorias. |
 | **Dim_Localidade** | Dimensão | Hierarquia geográfica completa (Cidade, Estado, País, Região, Mercado). |
